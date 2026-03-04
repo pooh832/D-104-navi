@@ -383,3 +383,6 @@ body::before{
 
    body{ outline: 6px solid hotpink !important; }
 }
+body{
+  border:10px solid red !important;
+}
