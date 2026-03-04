@@ -286,3 +286,98 @@ a[aria-disabled="true"]{
   .grid{ grid-template-columns:1fr 1fr; }
   .header h1{ font-size:28px; }
 }
+
+/* =========================
+   DisneySea-ish accents (subtle)
+   既存CSSの一番下に追記
+========================= */
+
+/* 1) ヘッダーに “魔法のリボン” を薄く（派手にしない） */
+.header{
+  position:relative;
+  overflow:hidden;
+}
+.header::after{
+  content:"";
+  position:absolute;
+  inset:-40px -80px auto -80px;
+  height:190px;
+  pointer-events:none;
+
+  background:
+    radial-gradient(240px 120px at 20% 60%, rgba(255,255,255,.38), transparent 70%),
+    radial-gradient(280px 140px at 55% 30%, rgba(127,214,230,.30), transparent 70%),
+    radial-gradient(260px 140px at 85% 60%, rgba(255,255,255,.30), transparent 72%);
+  opacity:.55;
+}
+
+/* 2) タイトルを “アールデコっぽい” 上品な字間に */
+.header h1{
+  letter-spacing:.12em;
+  text-transform:none;
+}
+
+/* 3) カードの縁に “ジュエリーの縁取り” を追加（角のハイライト） */
+.card, .tile{
+  position:relative;
+}
+.card::before, .tile::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  background:
+    linear-gradient(135deg,
+      rgba(255,255,255,.55),
+      rgba(255,255,255,0) 45%,
+      rgba(255,255,255,.35) 80%,
+      rgba(255,255,255,0));
+  mix-blend-mode: screen;
+  opacity:.45;
+}
+
+/* 4) ボタンを “パール＋魔法” っぽく：中心にうっすら光 */
+.btn{
+  position:relative;
+  overflow:hidden;
+}
+.btn::after{
+  content:"";
+  position:absolute;
+  inset:-60% -20%;
+  background:
+    radial-gradient(220px 120px at 50% 50%, rgba(255,255,255,.35), transparent 60%);
+  opacity:.55;
+  transform:translateY(8px);
+  pointer-events:none;
+}
+
+/* 5) MENU見出しに小さな星を左右（主張しすぎない） */
+.sectionTitle{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+.sectionTitle::before,
+.sectionTitle::after{
+  content:"✦";
+  font-size:14px;
+  color:rgba(255,255,255,.85);
+  text-shadow:0 2px 10px rgba(44,147,178,.25);
+  opacity:.8;
+}
+
+/* 6) 背景の “水面の波紋” をほんの少しだけ（海感控えめ） */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(closest-side at 18% 72%, rgba(255,255,255,.16), transparent 60%),
+    radial-gradient(closest-side at 78% 68%, rgba(255,255,255,.12), transparent 62%);
+  opacity:.35;
+}
