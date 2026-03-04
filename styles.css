@@ -381,8 +381,71 @@ body::before{
   opacity:.35;
 }
 
-   body{ outline: 6px solid hotpink !important; }
 }
-body{
-  border:10px solid red !important;
+
+/* ===== DisneySea subtle sparkle ===== */
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:
+  radial-gradient(circle at 20% 30%, rgba(255,255,255,0.25) 1px, transparent 1px),
+  radial-gradient(circle at 80% 60%, rgba(255,255,255,0.2) 1px, transparent 1px),
+  radial-gradient(circle at 50% 80%, rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size:120px 120px;
+  opacity:0.35;
+}
+
+/* ===== MENU装飾 ===== */
+
+.sectionTitle{
+  position:relative;
+  letter-spacing:4px;
+}
+
+.sectionTitle::before,
+.sectionTitle::after{
+  content:"✦";
+  margin:0 8px;
+  color:#8fc4d4;
+}
+
+/* ===== カードを浮かせる ===== */
+
+.tile{
+  transition: all .25s ease;
+}
+
+.tile:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.12);
+}
+
+/* ===== ボタン光沢 ===== */
+
+.btn{
+  position:relative;
+  overflow:hidden;
+}
+
+.btn::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.4),
+    transparent
+  );
+  transition:0.6s;
+}
+
+.btn:hover::after{
+  left:100%;
 }
