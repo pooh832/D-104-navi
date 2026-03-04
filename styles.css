@@ -285,9 +285,8 @@ a[aria-disabled="true"]{
 @media (min-width:640px){
   .grid{ grid-template-columns:1fr 1fr; }
   .header h1{ font-size:28px; }
-}
 
-/* =========================
+   * =========================
    DisneySea-ish accents (subtle)
    既存CSSの一番下に追記
 ========================= */
@@ -380,4 +379,6 @@ body::before{
     radial-gradient(closest-side at 18% 72%, rgba(255,255,255,.16), transparent 60%),
     radial-gradient(closest-side at 78% 68%, rgba(255,255,255,.12), transparent 62%);
   opacity:.35;
+}
+
 }
