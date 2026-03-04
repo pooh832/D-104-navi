@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>サークル情報ハブ</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brandIcon">📘</div>
+    <h1>サークル情報ハブ</h1>
+    <p class="sub">予定・詳細・部室案内・質問をまとめて確認</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2><span class="badge">📅</span> 次回の活動</h2>
+
+      <div class="next">
+        <p class="label">日時</p><p id="nextDate">未設定</p>
+        <p class="label">内容</p><p id="nextTitle">未設定</p>
+        <p class="label">集合</p><p id="nextPlace">未設定</p>
+      </div>
+
+      <button id="setNextBtn" class="btn">次回予定を仮登録</button>
+      <p class="hint">※あとで「カレンダー機能」に置き換えます</p>
+    </section>
+
+    <div class="sectionTitle">MENU</div>
+
+    <section class="grid">
+      <a class="tile" href="room.html">
+        <span class="emoji">🎥</span>
+        <div>
+          <h3>部室への行き方</h3>
+          <p>動画でチェック</p>
+        </div>
+      </a>
+
+      <a class="tile" href="#" aria-disabled="true">
+        <span class="emoji">🗓️</span>
+        <div>
+          <h3>カレンダー</h3>
+          <p>（今後実装）</p>
+        </div>
+      </a>
+
+      <a class="tile" href="#" aria-disabled="true">
+        <span class="emoji">📌</span>
+        <div>
+          <h3>活動詳細</h3>
+          <p>（今後実装）</p>
+        </div>
+      </a>
+
+      <a class="tile" href="#" aria-disabled="true">
+        <span class="emoji">❓</span>
+        <div>
+          <h3>質問する</h3>
+          <p>（今後実装）</p>
+        </div>
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© Circle Hub</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
